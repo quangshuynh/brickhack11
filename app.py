@@ -1,9 +1,41 @@
 import streamlit as st
 from backend.llm import get_ollama_response
 
-st.set_page_config(page_title="AI Chat Interface", layout="wide")
+st.set_page_config(
+    page_title="Travel Buddy AI",
+    layout="wide",
+    page_icon="✈️"
+)
 
-st.title("AI Chat Interface")
+# Custom CSS
+st.markdown("""
+    <style>
+    .stApp {
+        background-image: linear-gradient(to right bottom, #87CEEB, #E0FFFF);
+    }
+    .st-emotion-cache-1v0mbdj {
+        border-radius: 15px;
+        border: 1px solid #e0e0e0;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+# Header with emoji and styling
+st.markdown("# ✈️ Travel Buddy AI 🌎")
+st.markdown("### Your personal AI travel assistant is here to help plan your next adventure! 🗺️")
+
+# Info box
+with st.expander("ℹ️ How can I help you?"):
+    st.write("""
+    I can assist you with:
+    - Planning travel itineraries 🗓️
+    - Finding destinations based on your interests 🎯
+    - Suggesting local attractions and activities 🎨
+    - Providing travel tips and advice 💡
+    - Recommending accommodations and restaurants 🏨
+    """)
 
 # Initialize chat history
 if "messages" not in st.session_state:
