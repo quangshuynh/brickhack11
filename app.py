@@ -177,6 +177,14 @@ def render_chat():
 
 render_chat()
 
+st.markdown("""
+    <style>
+    .stChatInput textarea::placeholder {
+         color: black;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 user_input = st.chat_input("Ask GoGen anything about travel...")
 if user_input:
     st.session_state.messages.append({"role": "user", "content": user_input})
