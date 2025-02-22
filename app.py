@@ -1,5 +1,5 @@
 import streamlit as st
-from backend.test import get_ollama_response
+from backend.llm import get_ollama_response
 
 st.set_page_config(page_title="AI Chat Interface", layout="wide")
 
