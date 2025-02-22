@@ -2,7 +2,7 @@ from ollama import Client
 from typing import List, Dict
 
 # Initialize Ollama client with custom host
-client = Client(host='http://129.21.42.90:11434')
+client = Client(host='http://localhost:11434/')
 
 def get_ollama_response(history: List[Dict[str, str]] = None) -> str:
     """
