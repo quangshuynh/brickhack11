@@ -25,7 +25,7 @@ if prompt := st.chat_input("What would you like to ask?"):
 
     # Get AI response
     with st.chat_message("assistant"):
-        response = get_ollama_response(prompt)
+        response = get_ollama_response(st.session_state.messages)
         st.markdown(response)
         
     # Add assistant response to chat history
